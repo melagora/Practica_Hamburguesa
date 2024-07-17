@@ -25,11 +25,11 @@
       <!-- menu de navegacion -->
       <nav>
         <!-- lista desordenada -->
-        <ul>
-          <li><a href="#" class="nav-link">Home</a></li>
-          <li><a href="#" class="nav-link">Nosotros</a></li>
-          <li><a href="#" class="nav-link">Menu</a></li>
-          <li><a href="#" class="nav-link">Contacto</a></li>
+        <ul >
+          <li><a href="#encabezado" class="nav-link">Home</a></li>
+          <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
         </ul>
       </nav>
     </header>
@@ -39,7 +39,7 @@
         <h3 class="subtitulo">Experiencia a la mejor comida</h3>
       </section>
       <!-- apartado de nosotros -->
-      <section class="seccion-nosotros caja">
+      <section class="seccion-nosotros caja" id="nosotros">
         <h2>Nosotros</h2>
         <section class="nosotros">
           <div class="nosotros-contenido">
@@ -65,7 +65,7 @@
       </section>
       <!-- apartado de menu -->
       <section class="menu">
-        <h2>Menu</h2>
+        <h2 id="menu">Menu</h2>
         <!-- contenedor para el menu de hamburguesas -->
         <section class="menu-hamburguesa">
           <!-- div*6 
@@ -110,6 +110,9 @@
         </section>
       </section>
     </main>
+
+    <!-- PIE DE PAGINA -->
+
     <footer>
       <section class="ubicacion">
         <h2>Ubicación</h2>
@@ -128,7 +131,7 @@
           <p>Horario: De lunes a viernes de 8 a.m. a 8 p.m.</p>
         </section>
       </section>
-      <section class="contacto">
+      <section class="contacto" id="contacto">
         <h2>Contacto</h2>
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required />
