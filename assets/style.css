@@ -45,6 +45,17 @@ nav ul li{
         indicamos la orientacion de los elementos
     */
     flex-flow: column nowrap;
+
+    /** 
+        Propiedad para recortar la imagen
+        superior izquierda
+        superior derecha
+        inferior de la derecha
+        inferior de la izquierda
+    */
+
+    clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
+
 }
 
 .titulo{
@@ -58,13 +69,14 @@ nav ul li{
 .subtitulo{
     color: var(--blanco);
     font-size: 2rem;
-    letter-spacing: .7rem;
+    letter-spacing: .5rem;
     font-weight: 400;
 }
 
 .caja{
     width: 80%;
     margin: auto;
+    padding-top: 5%;
 }
 
 .nosotros{
@@ -76,7 +88,8 @@ nav ul li{
 
 .nosotros-imagen{
     position: relative;
-    flex: 0 0 400px;
+    width: 40%;
+    
 }
 
 .nosotros-imagen img{
@@ -84,6 +97,7 @@ nav ul li{
     height: 300px; /*Alto*/
     object-fit: cover; /*Adaptamos la imagen a su contenedor*/
     box-shadow: 0 0 10px 2px;
+    
 
     &:hover{
         transform: scale(1.1);
@@ -91,7 +105,8 @@ nav ul li{
 }
 
 .nosotros-contenido{
-    flex: 0 0 50%;
+    width: 60%;
+    padding-top: 7%;
 }
 
 h2{
@@ -122,22 +137,34 @@ span{
     color: var(--color-secundario);
 } */
 
-.seccion-mejores-productos{
-    background-image: url(https://res.cloudinary.com/dmddi5ncx/image/upload/v1720574753/practicas/hamburguesa/image3_ulstmf.jpg);
+.seccion-mejores{
+    background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(https://res.cloudinary.com/dmddi5ncx/image/upload/v1720574753/practicas/hamburguesa/image3_ulstmf.jpg);
     width: 100%;
     height: 300px;
+    /** indicamos que el contenido se adapte al contenedor y se reposicione hacia abajo (la imagen) */
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /** 
+        combina 2 propiedades flex-direction y flex-wrap
+        indicamos la orientacion de los elementos
+    */
     flex-flow: column nowrap;
-    margin-top: 2rem;
+    margin-top: 50px;
+
 }
 
 .titulo2{
     color: var(--blanco);
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: .3rem;
@@ -145,14 +172,13 @@ span{
 
 .parrafo-titulo2{
     color: var(--blanco);
-    font-size: 1rem;
+    font-size: 2rem;
     letter-spacing: .6rem;
     font-weight: 400;
-    padding-bottom: 5%;
 }
 
 .btn{
-    width: 170px;
+    width: 150px;
     border: none;
     height: 40px;
     border-radius: 10px;
@@ -160,20 +186,164 @@ span{
     color: var(--blanco);
 }
 
-.btn-titulo2{
-    background-color: var(--color-primario);
+.menu{
+    padding: 10%;
 }
+
+.menu-hamburguesa{
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos salten a la siguiente línea */
+    justify-content: space-between; /* Distribuye los elementos con espacio uniforme */
+  }
 
 .menu-tarjeta{
     width: 30%;
-    height: 300px;
+    height: 200px;
     box-shadow: 0 0 10px 5px;
     margin-bottom: 30px;
     background-size: cover;
     background-position: center;
     text-align: center;
+
+}
+
+.tarjeta{
+    color: var(--blanco);
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    font-size: 3rem;
+}
+
+.menu-tarjeta:hover .tarjeta{
+    opacity: 1;
+}
+
+.btn-titulo2{
+    background-color: var(--color-primario);
+}
+
+.btn-tarjeta{
+    background-color: var(--color-secundario);
+}
+
+/* Efecto Oscuro */
+.seccion-restaurante::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 120%;
+}
+
+.seccion-restaurante *, .seccion-mejores *{
+    position: relative;
 }
 
 .menu-tarjeta:nth-child(1){
     background-image: url(https://res.cloudinary.com/dmddi5ncx/image/upload/v1720574754/practicas/hamburguesa/product1_loak4u.jpg);
+}
+
+.menu-tarjeta:nth-child(2){
+    background-image: url(https://res.cloudinary.com/dmddi5ncx/image/upload/v1720574753/practicas/hamburguesa/product2_sgcwng.jpg);
+}
+
+.menu-tarjeta:nth-child(3){
+    background-image: url(https://res.cloudinary.com/dmddi5ncx/image/upload/v1720574753/practicas/hamburguesa/product3_rhoyoi.jpg);
+}
+
+.menu-tarjeta:nth-child(4){
+    background-image: url(https://res.cloudinary.com/dmddi5ncx/image/upload/v1720574754/practicas/hamburguesa/product4_vwkcmh.jpg);
+}
+
+.menu-tarjeta:nth-child(5){
+    background-image: url(https://res.cloudinary.com/dmddi5ncx/image/upload/v1720574754/practicas/hamburguesa/product5_ugbrat.jpg);
+}
+
+.menu-tarjeta:nth-child(6){
+    background-image: url(https://res.cloudinary.com/dmddi5ncx/image/upload/v1720574754/practicas/hamburguesa/product6_f6gyfk.jpg);
+}
+
+/* Medias querys */
+
+@media (min-width: 360px) and (max-width: 768px){
+    .menu-tarjeta{
+        width: 100%;
+    }
+
+    .titulo{
+        font-size: 2rem;
+    }
+
+    .subtitulo{
+        font-size: 1.5rem;
+        letter-spacing: .1rem;
+    }
+
+    .nosotros-contenido{
+        flex: 0 0 100%;
+        padding-bottom: 20px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .nosotros-imagen{
+        flex: 0 0 100%;
+    }
+    
+    .titulo2{
+        font-size: 1.5rem;
+    }
+
+    .parrafo-titulo2{
+        font-size: 1rem;
+        letter-spacing: .3rem;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1280px){
+
+    .titulo{
+        font-size: 4rem;
+    }
+
+    .subtitulo{
+        font-size: 2rem;
+        letter-spacing: .5rem;
+    }
+
+    .titulo2{
+        font-size: 2.5rem;
+    }
+
+    .parrafo-titulo2{
+        font-size: 2rem;
+        letter-spacing: .6rem;
+    }
+
+    .nosotros-contenido{
+        flex: 0 0 100%;
+        padding-bottom: 20px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .nosotros-imagen{
+        flex: 0 0 100%;
+    }
+
+    .menu-tarjeta{
+        width: 100%;
+    }
+
 }
